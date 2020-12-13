@@ -1,0 +1,5 @@
+src/nginx/private/
+data/
+.SECRETS.json
+.secretenv.list
+src/nginx/private
