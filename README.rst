@@ -3,31 +3,31 @@
 ================================================================================
 
 This project contains the cghousing web site (a Django application) and all of
-its service dependencies (nginx, postgres, smtp) as Docker containers. It should
+its service dependencies (nginx, postgres) as Docker containers. It should
 be useful for deploying the web site locally or on a container-based hosting
 platform.
 
 
-Deploy the CG Housing App using Docker
+Install / Deploy
 ================================================================================
 
-Use ``make`` for all the things!
+This assumes you have docker and make installed.
 
-Create the ``cg`` Docker network::
+First, create the ``cg`` Docker network::
 
     $ make network
 
 Build the PostgreSQL (postgres) image::
 
-    $ make pg-build
+    $ make db-build
 
 Run the postgres image::
 
-    $ make pg-run
+    $ make db-run
 
 Load the SQL dump file into the postgres image::
 
-    $ make pg-load
+    $ make db-load
 
 .. note:: I had to change the role in the dump file from ``postgres`` to
           ``cgprod``.
@@ -53,4 +53,5 @@ http://cghousing.org:6080 to view the application::
 TODOs
 ================================================================================
 
-- User uploaded files are not being served.
+- LaTeX
+- SMTP server
