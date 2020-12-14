@@ -30,6 +30,9 @@ psql:  ## open psql to access the cghousing db CLI
 dj-build:  ## build the Django CGHousing image
 	@docker build -f src/cghousing/Dockerfile -t cg-django:1.0 src/cghousing
 
+dj-latex-build:  ## build the Django CGHousing image with LaTeX
+	@docker build -f src/cghousing/test.Dockerfile -t cg-django-tex:1.0 src/cghousing
+
 dj-run:  ## run the Django CGHousing container
 	@docker run \
 		-d \

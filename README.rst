@@ -55,3 +55,7 @@ TODOs
 
 - LaTeX
 - SMTP server
+
+  - https://github.com/tomav/docker-mailserver/blob/master/docker-compose.yml
+  - https://www.digitalocean.com/community/tutorials/how-to-run-your-own-mail-server-with-mail-in-a-box-on-ubuntu-14-04
+  - https://www.digitalocean.com/community/questions/how-to-set-up-email-on-digitalocean-droplet
