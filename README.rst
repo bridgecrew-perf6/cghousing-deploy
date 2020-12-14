@@ -50,10 +50,13 @@ http://cghousing.org:6080 to view the application::
     127.0.0.1 cghousing.org
 
 
+Production Deployment
+================================================================================
+
+
 TODOs
 ================================================================================
 
-- LaTeX
 - SMTP server
 
   - https://github.com/tomav/docker-mailserver/blob/master/docker-compose.yml

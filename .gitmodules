@@ -1,3 +1,3 @@
 [submodule "src/cghousing"]
 	path = src/cghousing
-	url = git@github.com:jrwdunham/cghousing.git
+	url = https://github.com/jrwdunham/cghousing.git

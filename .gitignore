@@ -3,3 +3,4 @@ data/
 .SECRETS.json
 .secretenv.list
 src/nginx/private
+.README.rst
