@@ -1,6 +1,17 @@
 server {
     listen 80;
     server_name cghousing.org www.cghousing.org;
+
+    location / {
+        return 301 https://$server_name$request_uri;
+    }
+}
+
+server {
+    listen 443 ssl;
+    server_name cghousing.org www.cghousing.org;
+    ssl_certificate /etc/letsencrypt/live/cghousing.org/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/cghousing.org/privkey.pem;
     location / {
         proxy_set_header        Host $http_host;
         proxy_set_header        X-Real-IP $remote_addr;

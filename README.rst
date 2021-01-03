@@ -50,14 +50,10 @@ http://cghousing.org:6080 to view the application::
     127.0.0.1 cghousing.org
 
 
-Production Deployment
+TODOs / Somedays
 ================================================================================
 
-
-TODOs
-================================================================================
-
-- SMTP server
+- SMTP server (no longer needed, using Google)
 
   - https://github.com/tomav/docker-mailserver/blob/master/docker-compose.yml
   - https://www.digitalocean.com/community/tutorials/how-to-run-your-own-mail-server-with-mail-in-a-box-on-ubuntu-14-04
