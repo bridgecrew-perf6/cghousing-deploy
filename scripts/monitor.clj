@@ -235,15 +235,21 @@
                       :status failure-status}
       recovery-status {:content (generate-recovery-email-content recovery-status outcome)
                        :status recovery-status}
-      :else nil)))
+      :else nil))) 
+
+(defn email-and-log [email-address content log-path status]
+  (apply send-email email-address content)
+  (log log-path {:event :emailing :status status}))
 
 (defn email-outcome
   "Send an email only if we need to. Consult our state at log-path to determine if so."
   [log-path email-address outcome]
   (when-let [email (generate-email-content log-path outcome)]
     (let [{:keys [content status]} email]
-      (apply send-email email-address content)
-      (log log-path {:event :emailing :status status}))))
+      (try
+        (email-and-log email-address content log-path status)
+        (catch Exception e
+          (log log-path {:event :emailing-failure :status status :exc (str e)}))))))
 
 (defn init [log-path]
   (when-not (->> log-path (shell/sh "ls") :exit zero?)
