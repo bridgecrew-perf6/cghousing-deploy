@@ -88,6 +88,18 @@ server-run:  ## run the Nginx CGHousing container
 		-p 6080:80 \
 		cg-nginx:1.0
 
+server-run-dev:  ## run the Nginx CGHousing container in dev mode
+	docker run \
+		-d \
+		--network cg \
+		--name cg-server \
+		-v "$(ROOT_DIR)/data/static:/cghousing-static:ro" \
+		-v "$(ROOT_DIR)/src/nginx/html:/var/www/html" \
+		-v "$(ROOT_DIR)/src/nginx/etc/nginx.conf:/etc/nginx/nginx.conf" \
+		-v "$(ROOT_DIR)/src/nginx/etc/cg-dev:/etc/nginx/sites-enabled/cg-dev" \
+		-p 6080:80 \
+		cg-nginx:1.0
+
 server-sh:  ## run sh shell in the Nginx CGHousing container
 	@docker run \
 		-it \

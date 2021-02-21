@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name cghousing.org www.cghousing.org;
+    server_name dev.cghousing.org www.dev.cghousing.org;
     location / {
         proxy_set_header        Host $http_host;
         proxy_set_header        X-Real-IP $remote_addr;

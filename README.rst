@@ -44,10 +44,14 @@ Build the Nginx image::
 
     $ make server-build
 
-Add the following line to ``/etc/hosts`` file so that you can navigate to
-http://cghousing.org:6080 to view the application::
+Run the Nginx image in local dev mode::
 
-    127.0.0.1 cghousing.org
+    $ make server-run-dev
+
+Add the following line to ``/etc/hosts`` file so that you can navigate to
+http://dev.cghousing.org:6080 to view the application::
+
+    127.0.0.1 dev.cghousing.org
 
 
 TODOs / Somedays
